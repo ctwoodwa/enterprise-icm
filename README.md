@@ -26,10 +26,23 @@ The outputs feed directly into your actual .NET solution repos.
 |---|---|
 | _core/ | MWP conventions and templates (read-only reference) |
 | workspaces/enterprise-software-dev/ | Main workspace for .NET enterprise projects |
+| workspaces/enterprise-standards-upgrade/ | Brownfield workspace for standards gap analysis and upgrade planning |
 | workspaces/enterprise-software-dev/_config/ | Your org and stack config, filled once at setup |
 | workspaces/enterprise-software-dev/shared/ | Cross-cutting rules: observability, security, API visibility |
 | workspaces/enterprise-software-dev/stages/ | Five pipeline stages, each producing output artifacts |
 | workspaces/enterprise-software-dev/setup/ | Onboarding questionnaire |
+
+## Brownfield Upgrade Workspace
+
+Use `workspaces/enterprise-standards-upgrade/` when you are assessing an existing repository and planning standards adoption.
+
+| Stage | Name | Produces |
+|---|---|---|
+| 01 | Audit Current | `[slug]-current-architecture.md` |
+| 02 | Gap Analysis | `[slug]-standards-gap-analysis.md` |
+| 03 | Evolution Design | `[slug]-upgrade-design.md` |
+| 04 | Migration Plan | `[slug]-upgrade-plan.md` |
+| 05 | Rollout Checklist | `[slug]-upgrade-status.md` |
 
 ## The Five Stages
 

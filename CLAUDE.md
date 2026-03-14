@@ -15,7 +15,8 @@ enterprise-icm/
 │   ├── placeholder-syntax.md          (how {{VARIABLES}} work)
 │   └── templates/                     (blank starting points for new workspaces)
 └── workspaces/
-    └── enterprise-software-dev/       (enterprise .NET platform workspace)
+    ├── enterprise-software-dev/       (greenfield enterprise .NET platform workspace)
+    └── enterprise-standards-upgrade/  (brownfield standards analysis and upgrade workspace)
 ```
 
 ## Routing
@@ -23,6 +24,7 @@ enterprise-icm/
 | You want to...                              | Go to                                                        |
 |---------------------------------------------|--------------------------------------------------------------|
 | Design an enterprise software platform      | `workspaces/enterprise-software-dev/CLAUDE.md`               |
+| Upgrade an existing repo to enterprise standards | `workspaces/enterprise-standards-upgrade/CLAUDE.md`     |
 | Read the full MWP specification             | `_core/CONVENTIONS.md`                                       |
 | Understand the placeholder system           | `_core/placeholder-syntax.md`                                |
 | Use a template for a new workspace          | `_core/templates/`                                           |
