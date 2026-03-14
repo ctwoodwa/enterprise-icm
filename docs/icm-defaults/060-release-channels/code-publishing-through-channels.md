@@ -1,5 +1,15 @@
 # Code Publishing Through Release & Environment Channels
 
+> **Role in ICM:** Layer 3 - release-channel defaults for progression, isolation, deployment flow, and environment policy.
+>
+> **Used by ICM stages (example Stage CONTEXT Inputs rows):**
+> | Input | Source | Stage usage |
+> | --- | --- | --- |
+> | Default guidance: code-publishing-through-channels | docs/icm-defaults/060-release-channels/code-publishing-through-channels.md | Referenced from a stage CONTEXT Inputs table as the baseline default for this topic. |
+> | Stack adaptations (if any) | workspaces/<workspace>/stages/<stage>/references/*.md | Stage records ADR-backed deviations when implementation stack differs from defaults. |
+>
+> **Technology defaults (adaptable):** These defaults assume .NET/Aspire/Blazor/Entra as the reference stack. The methodology remains stack-agnostic; other stacks can adapt by documenting deviations in project ADRs.
+
 ## Overview
 
 The {{ PRODUCT_NAME }} platform uses a structured two-dimensional channel system to manage how code and services are published, deployed, and distributed to users. This document explains how software moves through **Release Channels** (maturity levels) and **Environment Channels** (deployment stages).

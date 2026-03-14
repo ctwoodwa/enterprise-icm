@@ -1,5 +1,15 @@
 # Context and Principles
 
+> **Role in ICM:** Layer 3 - enterprise architecture context for software development workspaces. Canonical rules for system goals and cross-cutting capabilities.
+>
+> **Used by ICM stages (example Stage CONTEXT Inputs rows):**
+> | Input | Source | Stage usage |
+> | --- | --- | --- |
+> | Default guidance: context-and-principles | docs/icm-defaults/010-context/context-and-principles.md | Referenced from a stage CONTEXT Inputs table as the baseline default for this topic. |
+> | Stack adaptations (if any) | workspaces/<workspace>/stages/<stage>/references/*.md | Stage records ADR-backed deviations when implementation stack differs from defaults. |
+>
+> **Technology defaults (adaptable):** These defaults assume .NET/Aspire/Blazor/Entra as the reference stack. The methodology remains stack-agnostic; other stacks can adapt by documenting deviations in project ADRs.
+
 > Status: Draft  
 > Owner: TBD  
 > Last updated: 2026-01-10

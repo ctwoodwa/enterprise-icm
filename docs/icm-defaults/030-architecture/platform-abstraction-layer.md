@@ -1,5 +1,15 @@
 # Platform Abstraction Layer
 
+> **Role in ICM:** Layer 3 - architecture defaults for structure, data flow, integrations, security, observability, and platform boundaries.
+>
+> **Used by ICM stages (example Stage CONTEXT Inputs rows):**
+> | Input | Source | Stage usage |
+> | --- | --- | --- |
+> | Default guidance: platform-abstraction-layer | docs/icm-defaults/030-architecture/platform-abstraction-layer.md | Referenced from a stage CONTEXT Inputs table as the baseline default for this topic. |
+> | Stack adaptations (if any) | workspaces/<workspace>/stages/<stage>/references/*.md | Stage records ADR-backed deviations when implementation stack differs from defaults. |
+>
+> **Technology defaults (adaptable):** These defaults assume .NET/Aspire/Blazor/Entra as the reference stack. The methodology remains stack-agnostic; other stacks can adapt by documenting deviations in project ADRs.
+
 > Status: Draft  
 > Owner: Platform Team  
 > Last updated: 2026-01-22

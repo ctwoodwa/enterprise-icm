@@ -1,5 +1,15 @@
 # Channel Configuration & Governance
 
+> **Role in ICM:** Layer 3 - release-channel defaults for progression, isolation, deployment flow, and environment policy.
+>
+> **Used by ICM stages (example Stage CONTEXT Inputs rows):**
+> | Input | Source | Stage usage |
+> | --- | --- | --- |
+> | Default guidance: channel-governance-config | docs/icm-defaults/060-release-channels/channel-governance-config.md | Referenced from a stage CONTEXT Inputs table as the baseline default for this topic. |
+> | Stack adaptations (if any) | workspaces/<workspace>/stages/<stage>/references/*.md | Stage records ADR-backed deviations when implementation stack differs from defaults. |
+>
+> **Technology defaults (adaptable):** These defaults assume .NET/Aspire/Blazor/Entra as the reference stack. The methodology remains stack-agnostic; other stacks can adapt by documenting deviations in project ADRs.
+
 > Status: Active  
 > Owner: Platform Architecture Team  
 > Last updated: 2026-01-22
