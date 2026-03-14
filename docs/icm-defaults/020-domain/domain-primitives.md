@@ -315,8 +315,8 @@ public record AssetConditionChanged : DomainEvent
 
 ## Related Documentation
 
-- [030-010-logical-architecture.md](030-010-logical-architecture.md) - how services use these primitives
-- [030-050-integration-architecture.md](030-050-integration-architecture.md) - how primitives flow through Event Hub
-- [030-060-data-architecture.md](030-060-data-architecture.md) - how primitives are persisted
+- [logical-architecture.md](logical-architecture.md) - how services use these primitives
+- [integration-architecture.md](integration-architecture.md) - how primitives flow through Event Hub
+- [data-architecture.md](data-architecture.md) - how primitives are persisted
 - `../03-apis/` - API contracts using these primitives
 - `../00-overview/010-glossary.md` - domain terminology

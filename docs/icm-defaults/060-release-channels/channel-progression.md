@@ -294,8 +294,8 @@ public class ChannelRollbackService
 
 ## Related Documentation
 
-- [Release Channels Concept](060-020-release-channels-concept.md)
-- [Environment Channels Concept](060-030-environment-channels-concept.md)
-- [Data Isolation](060-050-data-isolation.md)
-- [Configuration & Governance](060-060-channel-governance-config.md)
-- [Best Practices & Testing](060-090-best-practices-and-testing.md)
+- [Release Channels Concept](release-channels-concept.md)
+- [Environment Channels Concept](environment-channels-concept.md)
+- [Data Isolation](data-isolation.md)
+- [Configuration & Governance](channel-governance-config.md)
+- [Best Practices & Testing](best-practices-and-testing.md)

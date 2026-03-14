@@ -31,7 +31,7 @@ public enum ReleaseChannel
 }
 ```
 
-**See:** [Release Channels Concept](060-020-release-channels-concept.md)
+**See:** [Release Channels Concept](release-channels-concept.md)
 
 ---
 
@@ -50,7 +50,7 @@ public enum EnvironmentChannel
 }
 ```
 
-**See:** [Environment Channels Concept](060-030-environment-channels-concept.md)
+**See:** [Environment Channels Concept](environment-channels-concept.md)
 
 ---
 
@@ -69,14 +69,14 @@ public enum EnvironmentChannel
 
 ## Related Documentation
 
-- [Release Channels Concept](060-020-release-channels-concept.md)
-- [Environment Channels Concept](060-030-environment-channels-concept.md)
-- [Channel Progression](060-040-channel-progression.md)
-- [Data Isolation](060-050-data-isolation.md)
-- [Configuration & Governance](060-060-channel-governance-config.md)
-- [Performance & Scaling](060-070-performance-and-scaling.md)
-- [Migration Guide](060-080-channel-migration.md)
-- [Best Practices & Testing](060-090-best-practices-and-testing.md)
+- [Release Channels Concept](release-channels-concept.md)
+- [Environment Channels Concept](environment-channels-concept.md)
+- [Channel Progression](channel-progression.md)
+- [Data Isolation](data-isolation.md)
+- [Configuration & Governance](channel-governance-config.md)
+- [Performance & Scaling](performance-and-scaling.md)
+- [Migration Guide](channel-migration.md)
+- [Best Practices & Testing](best-practices-and-testing.md)
 - [Code Publishing Through Channels](111-code-publishing-through-channels.md)
 
 ---

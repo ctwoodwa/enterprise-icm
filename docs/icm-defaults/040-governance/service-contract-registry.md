@@ -92,6 +92,6 @@ public class ServiceDiscovery
 
 ## Related Documentation
 
-- [API Versioning](040-020-api-versioning.md)
-- [Contract Testing](040-040-contract-testing.md)
-- [Breaking Change Detection](040-060-breaking-change-detection.md)
+- [API Versioning](api-versioning.md)
+- [Contract Testing](contract-testing.md)
+- [Breaking Change Detection](breaking-change-detection.md)

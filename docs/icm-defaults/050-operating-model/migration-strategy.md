@@ -116,7 +116,7 @@ During migration, write **translation layers** between old and new:
   - `FacilityAsset`, `AssessmentEvent`, `WorkOrder`, `FacilityMetrics` records
   - `DomainEvent` base class
   - Validation rules
-- Primitive documentation (see `020-010-domain-primitives.md`)
+- Primitive documentation (see `domain-primitives.md`)
 
 **Success criteria:**
 - Primitives reviewed and approved by domain experts
@@ -514,7 +514,7 @@ public class ProcurementSystemAdapter
 ### Risk 4: Breaking Changes to External Consumers
 
 **Mitigation:**
-- Maintain API contract compatibility (see `040-010-interface-governance.md`)
+- Maintain API contract compatibility (see `interface-governance.md`)
 - Run consumer contract tests in CI/CD
 - Deprecation warnings before removing v1 APIs
 - Coordinated migration with external teams
@@ -672,9 +672,9 @@ public class ProcurementSystemAdapter
 
 ## Related Documentation
 
-- [020-010-domain-primitives.md](020-010-domain-primitives.md) - primitives to implement
+- [domain-primitives.md](domain-primitives.md) - primitives to implement
 - [025-platform-abstraction-layer.md](025-platform-abstraction-layer.md) - platform to build first
-- [040-010-interface-governance.md](040-010-interface-governance.md) - contract stability during migration
+- [interface-governance.md](interface-governance.md) - contract stability during migration
 - [095-team-ownership.md](095-team-ownership.md) - who migrates what
 - `../02-decision-records/` - ADRs documenting migration decisions
 - `../07-operations/` - operational runbooks for new architecture

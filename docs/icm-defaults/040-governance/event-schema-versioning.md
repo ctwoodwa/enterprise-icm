@@ -91,6 +91,6 @@ public class AssetReadModelUpdater : IEventConsumer
 
 ## Related Documentation
 
-- [API Versioning](040-020-api-versioning.md)
-- [Contract Testing](040-040-contract-testing.md)
-- [Service Contract Registry](040-050-service-contract-registry.md)
+- [API Versioning](api-versioning.md)
+- [Contract Testing](contract-testing.md)
+- [Service Contract Registry](service-contract-registry.md)

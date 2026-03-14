@@ -672,9 +672,9 @@ Together, they enable **controlled software lifecycle management** from initial 
 ---
 
 **Related Documentation**:
-- [Release & Environment Channels (Platform Architecture)](./060-010-release-channels.md)
+- [Release & Environment Channels (Platform Architecture)](./release-channels.md)
 - [Forms: Channel Architecture](../10-business-capabilities/forms/05-channels/channel-architecture.md)
-- [Deployment Architecture](./030-030-deployment-architecture.md)
+- [Deployment Architecture](./deployment-architecture.md)
 
 **Last Updated**: January 2026  
 **Status**: Active  

@@ -579,8 +579,8 @@ public void OnlyIntegrationTeam_CanReference_ExternalSystemClients()
 
 ## Related Documentation
 
-- [020-010-domain-primitives.md](020-010-domain-primitives.md) - what teams exchange via interfaces
+- [domain-primitives.md](domain-primitives.md) - what teams exchange via interfaces
 - [025-platform-abstraction-layer.md](025-platform-abstraction-layer.md) - Platform Team's interfaces
-- [040-010-interface-governance.md](040-010-interface-governance.md) - how teams evolve contracts
+- [interface-governance.md](interface-governance.md) - how teams evolve contracts
 - [100-migration-strategy.md](100-migration-strategy.md) - how teams adopt new architecture
 - `../02-decision-records/GOVERNANCE.md` - RFC and ADR processes

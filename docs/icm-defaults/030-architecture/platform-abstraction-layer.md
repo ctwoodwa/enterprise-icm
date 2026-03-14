@@ -626,7 +626,7 @@ Quarterly exercise to prove abstraction effectiveness:
 
 ## Related Documentation
 
-- [020-010-domain-primitives.md](020-010-domain-primitives.md) - what flows through these abstractions
-- [030-010-logical-architecture.md](030-010-logical-architecture.md) - how services use abstractions
-- [030-030-deployment-architecture.md](030-030-deployment-architecture.md) - DI registration and configuration
-- [040-010-interface-governance.md](040-010-interface-governance.md) - versioning and contract management
+- [domain-primitives.md](domain-primitives.md) - what flows through these abstractions
+- [logical-architecture.md](logical-architecture.md) - how services use abstractions
+- [deployment-architecture.md](deployment-architecture.md) - DI registration and configuration
+- [interface-governance.md](interface-governance.md) - versioning and contract management

@@ -130,7 +130,7 @@ public enum ApiVersion
 
 ## Related Documentation
 
-- [Event Schema Versioning](040-030-event-schema-versioning.md)
-- [Contract Testing](040-040-contract-testing.md)
-- [Breaking Change Detection](040-060-breaking-change-detection.md)
-- [Deprecation Process](040-070-deprecation-process.md)
+- [Event Schema Versioning](event-schema-versioning.md)
+- [Contract Testing](contract-testing.md)
+- [Breaking Change Detection](breaking-change-detection.md)
+- [Deprecation Process](deprecation-process.md)

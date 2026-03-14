@@ -985,6 +985,6 @@ Don't perform long-running operations in signal handlers.
 
 - [Business Logic Governance](075-business-logic-governance.md)
 - [Signal Patterns Guide](../../04-events-and-messaging/signal-patterns.md)
-- [Domain Primitives](020-010-domain-primitives.md)
+- [Domain Primitives](domain-primitives.md)
 - [Event Hub Architecture](../../04-events-and-messaging/README.md)
 - [AI Governance](../../08-security-and-compliance/120-ai-governance-architecture.md)

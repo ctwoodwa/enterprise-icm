@@ -421,8 +421,8 @@ ChannelTests/
 
 ## Related Documentation
 
-- [Channel Progression](060-040-channel-progression.md)
-- [Data Isolation](060-050-data-isolation.md)
-- [Configuration & Governance](060-060-channel-governance-config.md)
-- [Performance & Scaling](060-070-performance-and-scaling.md)
-- [Migration Guide](060-080-channel-migration.md)
+- [Channel Progression](channel-progression.md)
+- [Data Isolation](data-isolation.md)
+- [Configuration & Governance](channel-governance-config.md)
+- [Performance & Scaling](performance-and-scaling.md)
+- [Migration Guide](channel-migration.md)

@@ -47,37 +47,37 @@ All interfaces have explicit versions:
 
 ## Reference Documentation
 
-### [040-020 - API Versioning](040-020-api-versioning.md)
+### [040-020 - API Versioning](api-versioning.md)
 Semantic versioning strategy for REST APIs
 - Version support policy (N-1 support rule)
 - Breaking vs. non-breaking changes
 - Deprecation timeline
 
-### [040-030 - Event Schema Versioning](040-030-event-schema-versioning.md)
+### [040-030 - Event Schema Versioning](event-schema-versioning.md)
 Schema versioning for domain events
 - Event metadata and schema version tracking
 - Evolution rules (backward-compatible vs. breaking)
 - Multi-version consumer handling
 
-### [040-040 - Contract Testing](040-040-contract-testing.md)
+### [040-040 - Contract Testing](contract-testing.md)
 Consumer-driven contract testing patterns
 - Pact testing framework
 - CI/CD integration and enforcement
 - Contract registry integration
 
-### [040-050 - Service Contract Registry](040-050-service-contract-registry.md)
+### [040-050 - Service Contract Registry](service-contract-registry.md)
 Central registry for service interfaces
 - OpenAPI and AsyncAPI specifications
 - Consumer contracts and Pact files
 - Publishing and discovery workflows
 
-### [040-060 - Breaking Change Detection](040-060-breaking-change-detection.md)
+### [040-060 - Breaking Change Detection](breaking-change-detection.md)
 Automated detection and prevention
 - OpenAPI diff tools
 - CI/CD enforcement
 - Build failure on breaking changes
 
-### [040-070 - Deprecation Process](040-070-deprecation-process.md)
+### [040-070 - Deprecation Process](deprecation-process.md)
 Safe deprecation of APIs and events
 - Deprecation metadata and headers
 - Migration period requirements
@@ -99,9 +99,9 @@ This governance framework follows **contract-first design**:
 
 ## Related Documentation
 
-- [API Versioning](040-020-api-versioning.md)
-- [Event Schema Versioning](040-030-event-schema-versioning.md)
-- [Contract Testing](040-040-contract-testing.md)
-- [Service Contract Registry](040-050-service-contract-registry.md)
-- [Breaking Change Detection](040-060-breaking-change-detection.md)
-- [Deprecation Process](040-070-deprecation-process.md)
+- [API Versioning](api-versioning.md)
+- [Event Schema Versioning](event-schema-versioning.md)
+- [Contract Testing](contract-testing.md)
+- [Service Contract Registry](service-contract-registry.md)
+- [Breaking Change Detection](breaking-change-detection.md)
+- [Deprecation Process](deprecation-process.md)

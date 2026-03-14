@@ -343,7 +343,7 @@ await _repo.SaveAsync(testData.Select(d => new Form
 
 ## Related Documentation
 
-- [Channel Progression](060-040-channel-progression.md)
-- [Configuration & Governance](060-060-channel-governance-config.md)
-- [Performance & Scaling](060-070-performance-and-scaling.md)
-- [Best Practices & Testing](060-090-best-practices-and-testing.md)
+- [Channel Progression](channel-progression.md)
+- [Configuration & Governance](channel-governance-config.md)
+- [Performance & Scaling](performance-and-scaling.md)
+- [Best Practices & Testing](best-practices-and-testing.md)

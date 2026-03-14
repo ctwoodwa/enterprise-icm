@@ -211,6 +211,6 @@ var ltsRelease = new ServiceRelease
 
 ## Related Documentation
 
-- [Environment Channels Concept](060-030-environment-channels-concept.md)
-- [Channel Progression](060-040-channel-progression.md)
-- [Best Practices & Testing](060-090-best-practices-and-testing.md)
+- [Environment Channels Concept](environment-channels-concept.md)
+- [Channel Progression](channel-progression.md)
+- [Best Practices & Testing](best-practices-and-testing.md)

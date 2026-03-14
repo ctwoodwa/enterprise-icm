@@ -178,6 +178,6 @@ await _events.PublishAsync(newEvent);      // v2 (current)
 
 ## Related Documentation
 
-- [API Versioning](040-020-api-versioning.md)
-- [Event Schema Versioning](040-030-event-schema-versioning.md)
-- [Breaking Change Detection](040-060-breaking-change-detection.md)
+- [API Versioning](api-versioning.md)
+- [Event Schema Versioning](event-schema-versioning.md)
+- [Breaking Change Detection](breaking-change-detection.md)
