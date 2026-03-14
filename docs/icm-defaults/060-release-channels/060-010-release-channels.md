@@ -1,0 +1,86 @@
+# Release & Environment Channels
+
+> Status: Active  
+> Owner: Platform Architecture Team  
+> Last updated: 2026-01-22
+
+## Overview
+
+{{ PRODUCT_NAME }} uses a **dual-channel architecture** to manage the complete software lifecycle across the entire platform:
+
+1. **Release Channels** - Describe build maturity and audience eligibility
+2. **Environment Channels** - Describe platform installation locations and deployment stages
+
+Every piece of code, configuration, form definition, report template, workflow, and data artifact flows through both dimensions independently, enabling controlled, segmented software distribution to specific user groups while maintaining clean separation across development stages.
+
+---
+
+## The Two Channel Dimensions
+
+### Release Channels (Build Maturity)
+
+Describe the stability and readiness of software versions:
+
+```csharp
+public enum ReleaseChannel
+{
+    Alpha = 1,      // Very early, unstable - internal teams only, breaking changes expected
+    Beta = 2,       // Early access, feature-complete, new features, potentially buggy (UAT)
+    Stable = 3,     // Fully tested, reliable, production-ready versions
+    LTS = 4         // Long-term support, critical security updates only, for enterprises
+}
+```
+
+**See:** [Release Channels Concept](060-020-release-channels-concept.md)
+
+---
+
+### Environment Channels (Deployment Stages)
+
+Describe where software runs and its operational purpose:
+
+```csharp
+public enum EnvironmentChannel
+{
+    Development = 1,  // DEV - Active development, coding, frequent updates, unstable
+    Testing = 2,      // TEST/QA - Dedicated testing, validation, stable simulated environment
+    UAT = 3,          // UAT - User acceptance testing, business approval, pre-production
+    Production = 4,   // PROD - Live environment, actual customer operations
+    Support = 5       // SUPPORT - Post-release fixes, issue reproduction, post-deployment QA
+}
+```
+
+**See:** [Environment Channels Concept](060-030-environment-channels-concept.md)
+
+---
+
+## Channel Matrix
+
+| Release × Environment | Purpose | Stability | Users | Update Frequency |
+|---|---|---|---|---|
+| **Alpha × Development** | Feature development, experimentation | Very Low | Developers, Designers | Hourly/Daily |
+| **Beta × Testing** | QA validation, bug verification | Medium | QA Engineers, Test Automation | Daily/Weekly |
+| **Beta × UAT** | User acceptance testing, business approval | Medium-High | Business Analysts, End Users | Weekly |
+| **Stable × Production** | Live business operations | Maximum | All Production Users | Monthly/Quarterly |
+| **Stable × Training** | End-user training, onboarding | High | Trainers, New Users | Monthly |
+| **LTS × Support** | Enterprise support, critical fixes only | Maximum | Enterprise Customers | Security/Stability |
+
+---
+
+## Related Documentation
+
+- [Release Channels Concept](060-020-release-channels-concept.md)
+- [Environment Channels Concept](060-030-environment-channels-concept.md)
+- [Channel Progression](060-040-channel-progression.md)
+- [Data Isolation](060-050-data-isolation.md)
+- [Configuration & Governance](060-060-channel-governance-config.md)
+- [Performance & Scaling](060-070-performance-and-scaling.md)
+- [Migration Guide](060-080-channel-migration.md)
+- [Best Practices & Testing](060-090-best-practices-and-testing.md)
+- [Code Publishing Through Channels](111-code-publishing-through-channels.md)
+
+---
+
+## Key Principle
+
+**Channels are primitives, not features.** Every artifact is channel-scoped on **both** dimensions from creation, ensuring clean separation and controlled flow throughout the platform.
