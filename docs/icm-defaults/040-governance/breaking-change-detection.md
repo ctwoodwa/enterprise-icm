@@ -34,7 +34,7 @@ jobs:
         run: dotnet run --project src/Asset.Service -- generate-openapi > current-spec.yaml
       
       - name: Download previous spec from registry
-        run: curl https://registry.cannae.local/asset-service/v1/openapi.yaml > previous-spec.yaml
+        run: curl https://registry.{{ PRODUCT_NAME }}.local/asset-service/v1/openapi.yaml > previous-spec.yaml
       
       - name: Detect breaking changes
         uses: oasdiff/oasdiff-action@v0.0.15

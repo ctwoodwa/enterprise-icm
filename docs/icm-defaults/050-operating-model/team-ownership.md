@@ -63,11 +63,11 @@ Each team owns **complete modules** with well-defined interfaces:
 
 **Owns:**
 - Platform Abstraction Layer interfaces and implementations
-  - `Cannae.Platform.Messaging` (Event Hub/Service Bus wrappers)
-  - `Cannae.Platform.Identity` (Entra ID wrapper)
-  - `Cannae.Platform.AI` (OpenAI wrapper)
-  - `Cannae.Platform.Storage` (Repository abstractions)
-  - `Cannae.Platform.Caching` (Redis wrapper)
+  - `{{ PRODUCT_NAME }}.Platform.Messaging` (Event Hub/Service Bus wrappers)
+  - `{{ PRODUCT_NAME }}.Platform.Identity` (Entra ID wrapper)
+  - `{{ PRODUCT_NAME }}.Platform.AI` (OpenAI wrapper)
+  - `{{ PRODUCT_NAME }}.Platform.Storage` (Repository abstractions)
+  - `{{ PRODUCT_NAME }}.Platform.Caching` (Redis wrapper)
 - Cross-cutting infrastructure
   - OpenTelemetry (OTEL) configuration and collector deployment
   - API Gateway (APIM) shared policies and configuration
@@ -380,7 +380,7 @@ Task PublishBatchAsync<TEvent>(IEnumerable<TEvent> events, CancellationToken ct)
 
 ## Timeline
 - Implementation: Sprint 15
-- Release: v2.3.0 of Cannae.Platform.Messaging
+- Release: v2.3.0 of {{ PRODUCT_NAME }}.Platform.Messaging
 ```
 
 ---

@@ -107,8 +107,8 @@ Service B (same trace ID, new span ID)
 **Consistency is critical for querying and dashboards.**
 
 **Service naming convention:**
-- `cannae.{domain}.{component}`
-- Examples: `cannae.ordering.api`, `cannae.basket.worker`, `cannae.catalog.readmodel`
+- `{{ PRODUCT_NAME }}.{domain}.{component}`
+- Examples: `{{ PRODUCT_NAME }}.ordering.api`, `{{ PRODUCT_NAME }}.basket.worker`, `{{ PRODUCT_NAME }}.catalog.readmodel`
 
 **Resource attributes:**
 - `service.name` - service identifier

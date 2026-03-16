@@ -66,7 +66,7 @@ public void VerifyConsumerContracts()
     var config = new PactVerifierConfig
     {
         ProviderVersion = "1.2.3",
-        PactBrokerUri = new Uri("https://pact-broker.cannae.local"),
+        PactBrokerUri = new Uri("https://pact-broker.{{ PRODUCT_NAME }}.local"),
         ProviderName = "Asset.Service"
     };
     
