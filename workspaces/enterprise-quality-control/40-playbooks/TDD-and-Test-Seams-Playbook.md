@@ -13,6 +13,7 @@
 | **State** | ADR-0011, ADR-0005, ADR-0024 | State transitions, derivations, navigation flows |
 | **Application Service** | ADR-0024, ADR-0023 | Orchestration, retries, event publishing |
 | **Persistence CQRS** | ADR-0006, ADR-0013 | SQL parameters, mapping, transactions |
+| **DAB API Endpoints** | DAB spec, security-baseline | REST/GraphQL responses, permissions, config validation |
 | **Navigation** | ADR-0007, ADR-0011 | Route actions, observability for navigation |
 | **Eventing** | ADR-0023, ADR-0011 | Notification handlers and cross-module effects |
 | **UI Components** | ADR-0012, ADR-0007 | bUnit component rendering, interactions, state binding |
@@ -134,6 +135,71 @@ Test: "Handle_MapsResultToResponseCorrectly"
 - Run against test database or Testcontainers.
 - Verify stored procedure execution returns expected results.
 - Test transactional behavior (commit/rollback).
+
+---
+
+## Layer 3.5: DAB API Endpoints
+
+### What to Test
+
+- **REST responses:** GET (single, list, filter, sort, pagination), POST, PATCH, DELETE return correct status codes and shapes.
+- **GraphQL queries and mutations:** Queries return correct data; mutations create, update, and delete correctly.
+- **Permissions:** Each role can only access authorized operations; row-level policies filter data by claims.
+- **Configuration:** dab-config.json has valid entity definitions, sources, permissions, and no anonymous writes.
+- **Error handling:** Invalid requests return correct HTTP status codes and error shapes.
+
+### Typical Unit Tests
+
+```
+Test: "DabConfig_AllEntities_HavePermissionsDefined"
+  Arrange: Parse dab-config.json.
+  Act:     Enumerate all entities.
+  Assert:  Every entity has at least one permission entry.
+
+Test: "DabConfig_NoEntity_AllowsAnonymousWrite"
+  Arrange: Parse dab-config.json.
+  Act:     Check anonymous role actions across all entities.
+  Assert:  No anonymous role has create, update, or delete.
+```
+
+### Typical Integration Tests
+
+```
+Test: "GetAssetById_ReturnsCorrectEntity"
+  Arrange: Seed test database with known asset.
+  Act:     GET /api/Asset/AssetId/ASSET-001.
+  Assert:  200 with correct fields in DAB response wrapper.
+
+Test: "CreateAsset_WithDuplicateId_Returns409"
+  Arrange: Seed test database with existing asset.
+  Act:     POST /api/Asset with same ID.
+  Assert:  409 Conflict.
+
+Test: "ReadOnlyRole_CannotCreateAssets"
+  Arrange: Auth token with reader role.
+  Act:     POST /api/Asset.
+  Assert:  403 Forbidden.
+```
+
+### TDD Approach
+
+1. Write config validation tests asserting each entity has correct source, permissions, and field mappings.
+2. Create or update dab-config.json entity definitions.
+3. Write REST integration tests for GET (single, list, filtered, sorted, paginated).
+4. Configure REST endpoints and verify tests pass.
+5. Write GraphQL query and mutation tests.
+6. Configure GraphQL and verify tests pass.
+7. Write permission tests for each role × entity × operation combination.
+8. Configure role permissions and row-level policies until permission tests pass.
+9. Write contract tests (Pact) for each consumer of the DAB API.
+
+### Integration Tests
+
+- Run DAB against a Testcontainers SQL Server instance for isolation.
+- Verify REST and GraphQL responses match direct SQL query results.
+- Test YARP gateway proxying to DAB endpoints.
+- Verify Scalar UI and GraphQL Playground load through gateway routes.
+- See `50-examples/High-Quality-Test-Examples-DAB-API.md` for concrete examples.
 
 ---
 

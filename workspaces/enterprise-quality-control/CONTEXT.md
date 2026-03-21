@@ -11,8 +11,9 @@ This workspace is not a sequential pipeline. Use it as a reference library along
 3. **Making a State vs Service decision?** → Use `20-checklists/State-Service-Decision-and-Test-Checklist.md` per ADR-0024.
 4. **Implementing CQRS handlers?** → Use `20-checklists/Persistence-CQRS-Test-Checklist.md` per ADR-0006/0013.
 5. **Working with navigation or events?** → Use `20-checklists/Navigation-and-Eventing-Test-Checklist.md` per ADR-0007/0023.
-6. **Setting up CI coverage?** → Use `30-metrics-and-reporting/Test-Coverage-Metrics-and-Dashboards.md`.
-7. **Need examples?** → Browse `50-examples/` for tested patterns at each architecture layer.
+6. **Testing DAB API endpoints?** → Use `20-checklists/DAB-API-Endpoint-Test-Checklist.md` for REST/GraphQL endpoint coverage.
+7. **Setting up CI coverage?** → Use `30-metrics-and-reporting/Test-Coverage-Metrics-and-Dashboards.md`.
+8. **Need examples?** → Browse `50-examples/` for tested patterns at each architecture layer.
 
 ## Reference Materials
 

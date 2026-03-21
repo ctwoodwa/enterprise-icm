@@ -19,6 +19,7 @@ enterprise-quality-control/
 |  |- State-Service-Decision-and-Test-Checklist.md  (ADR-0024 boundary decisions)
 |  |- Persistence-CQRS-Test-Checklist.md            (ADR-0006/0013 CQRS tests)
 |  |- Navigation-and-Eventing-Test-Checklist.md     (ADR-0007/0023 nav+event tests)
+|  |- DAB-API-Endpoint-Test-Checklist.md           (DAB REST/GraphQL endpoint tests)
 |- 30-metrics-and-reporting/
 |  |- ICM-Metrics.md                    (consolidated ICM + testing metrics)
 |  |- Test-Coverage-Metrics-and-Dashboards.md  (code coverage metrics and CI)
@@ -32,6 +33,7 @@ enterprise-quality-control/
 |  |- High-Quality-Test-Examples-Navigation-and-Events.md  (nav + event tests)
 |  |- High-Quality-Test-Examples-bUnit.md                  (bUnit component tests)
 |  |- High-Quality-Test-Examples-Playwright.md             (Playwright E2E tests)
+|  |- High-Quality-Test-Examples-DAB-API.md                (DAB REST/GraphQL test patterns)
 ```
 
 ## Task Routing
@@ -45,6 +47,7 @@ enterprise-quality-control/
 | Decide State vs Service boundaries and tests | `20-checklists/State-Service-Decision-and-Test-Checklist.md` |
 | Check CQRS/persistence test coverage | `20-checklists/Persistence-CQRS-Test-Checklist.md` |
 | Check navigation and eventing tests | `20-checklists/Navigation-and-Eventing-Test-Checklist.md` |
+| Check DAB API endpoint tests | `20-checklists/DAB-API-Endpoint-Test-Checklist.md` |
 | Review ICM and testing metrics | `30-metrics-and-reporting/ICM-Metrics.md` |
 | Set up coverage dashboards | `30-metrics-and-reporting/Test-Coverage-Metrics-and-Dashboards.md` |
 | Learn how to use this workspace | `40-playbooks/ICM-QC-Playbook.md` |
@@ -55,6 +58,7 @@ enterprise-quality-control/
 | See example navigation/event tests | `50-examples/High-Quality-Test-Examples-Navigation-and-Events.md` |
 | See example bUnit component tests | `50-examples/High-Quality-Test-Examples-bUnit.md` |
 | See example Playwright E2E tests | `50-examples/High-Quality-Test-Examples-Playwright.md` |
+| See example DAB API tests | `50-examples/High-Quality-Test-Examples-DAB-API.md` |
 
 ## Triggers
 
