@@ -30,6 +30,8 @@ enterprise-quality-control/
 |  |- High-Quality-Test-Examples-State.md              (state test patterns)
 |  |- High-Quality-Test-Examples-Service-and-CQRS.md   (service + CQRS tests)
 |  |- High-Quality-Test-Examples-Navigation-and-Events.md  (nav + event tests)
+|  |- High-Quality-Test-Examples-bUnit.md                  (bUnit component tests)
+|  |- High-Quality-Test-Examples-Playwright.md             (Playwright E2E tests)
 ```
 
 ## Task Routing
@@ -51,6 +53,8 @@ enterprise-quality-control/
 | See example state tests | `50-examples/High-Quality-Test-Examples-State.md` |
 | See example service/CQRS tests | `50-examples/High-Quality-Test-Examples-Service-and-CQRS.md` |
 | See example navigation/event tests | `50-examples/High-Quality-Test-Examples-Navigation-and-Events.md` |
+| See example bUnit component tests | `50-examples/High-Quality-Test-Examples-bUnit.md` |
+| See example Playwright E2E tests | `50-examples/High-Quality-Test-Examples-Playwright.md` |
 
 ## Triggers
 

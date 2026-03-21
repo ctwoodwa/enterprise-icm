@@ -15,6 +15,8 @@
 | **Persistence CQRS** | ADR-0006, ADR-0013 | SQL parameters, mapping, transactions |
 | **Navigation** | ADR-0007, ADR-0011 | Route actions, observability for navigation |
 | **Eventing** | ADR-0023, ADR-0011 | Notification handlers and cross-module effects |
+| **UI Components** | ADR-0012, ADR-0007 | bUnit component rendering, interactions, state binding |
+| **E2E / User Journeys** | ADR-0007, ADR-0024 | Playwright critical path flows, navigation, role-based access |
 
 ---
 
@@ -197,6 +199,100 @@ Test: "Handler_WhenExecutedTwice_IsIdempotent"
 4. Write idempotency test.
 5. Adjust handler to be idempotent if needed.
 6. Write cross-module integration test if applicable.
+
+---
+
+## Layer 6: UI Components (bUnit)
+
+### What to Test
+
+- **Rendering from state:** Component displays correct data for a given state.
+- **User interactions → actions:** Clicks, inputs, and selections dispatch correct state actions via MediatR.
+- **Conditional rendering:** Elements appear/disappear based on state flags (permissions, status, loading).
+- **Validation:** Client-side validation prevents invalid submissions.
+
+### Typical Unit Tests (bUnit)
+
+```
+Test: "Component_RendersTitle_FromState"
+  Arrange: Set up IState<T> mock with known values.
+  Act:     RenderComponent<MyComponent>().
+  Assert:  Find("[data-testid='title']").TextContent matches expected.
+
+Test: "SubmitButton_DispatchesAction_WhenFormValid"
+  Arrange: Render component, fill inputs.
+  Act:     Find("[data-testid='submit']").Click().
+  Assert:  Mediator.Verify Send was called with expected action.
+
+Test: "SubmitButton_ShowsErrors_WhenFormInvalid"
+  Arrange: Render component, leave required fields empty.
+  Act:     Find("[data-testid='submit']").Click().
+  Assert:  Validation message visible, Mediator.Send never called.
+```
+
+### TDD Approach
+
+1. Write a test asserting the component renders expected elements from state.
+2. Create the component with `data-testid` attributes on interactive elements.
+3. Write a test asserting a user interaction dispatches the correct MediatR action.
+4. Wire up the interaction handler.
+5. Write validation tests to confirm invalid input is caught client-side.
+6. Add conditional rendering tests (loading, empty, error states).
+
+### Key Conventions
+
+- Use `data-testid` attributes for all selectors (resilient to CSS refactors).
+- Inject `IState<T>` and `IMediator` via bUnit's `Services.AddSingleton(mock.Object)`.
+- For Telerik components, register `Services.AddTelerikBlazor()` in the test context.
+- See `50-examples/High-Quality-Test-Examples-bUnit.md` for concrete examples.
+
+---
+
+## Layer 7: E2E User Journeys (Playwright)
+
+### What to Test
+
+- **Critical user journeys:** Full flows from login through task completion.
+- **Navigation and deep links:** URLs resolve to correct pages, back/forward works.
+- **Role-based access:** Different roles see different UI elements and capabilities.
+- **Grid interactions:** Sorting, filtering, paging on Telerik grids.
+- **Responsive layout:** Mobile/tablet viewports render correctly.
+
+### Typical E2E Tests (Playwright)
+
+```
+Test: "CreateWorkOrder_FullFlow"
+  Arrange: Login as operator.
+  Act:     Navigate → fill form → submit.
+  Assert:  Success toast shown, redirected to detail, status is "Draft".
+
+Test: "ApproveWorkOrder_AsApprover"
+  Arrange: Login as approver, navigate to submitted work order.
+  Act:     Click approve → confirm dialog.
+  Assert:  Status changes to "Approved", approve button disappears.
+
+Test: "DeepLink_LoadsCorrectData"
+  Arrange: Login.
+  Act:     Navigate directly to /work-orders/WO-1234.
+  Assert:  Page shows correct work order data.
+```
+
+### TDD Approach
+
+1. Define the critical user journey as a sequence of steps.
+2. Write the Playwright test describing the expected flow.
+3. Run it — it will fail on missing routes, elements, or behaviors.
+4. Implement the feature (using bUnit tests at the component level as you go).
+5. Re-run the Playwright test to confirm the full journey works end-to-end.
+
+### Key Conventions
+
+- Use `Page.GetByTestId("x")` as the primary locator strategy.
+- Use `Expect(locator).ToBeVisibleAsync()` / `ToHaveTextAsync()` for assertions.
+- Categorize tests: `[Category("smoke")]` for PR gates, `[Category("full")]` for nightly.
+- Keep E2E tests focused on journeys, not unit-level behavior (that belongs in bUnit/xUnit).
+- Run against a real deployed instance (not in-process) for true E2E coverage.
+- See `50-examples/High-Quality-Test-Examples-Playwright.md` for concrete examples.
 
 ---
 
