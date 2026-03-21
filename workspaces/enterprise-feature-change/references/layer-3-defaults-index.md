@@ -34,6 +34,9 @@ Do not copy or edit canonical defaults inside this workspace.
 - ../../../../docs/icm-defaults/040-governance/service-contract-registry.md
 - ../../../../docs/icm-defaults/040-governance/breaking-change-detection.md
 - ../../../../docs/icm-defaults/040-governance/deprecation-process.md
+- ../../../../docs/icm-defaults/040-governance/adr-template.md
+- ../../../../docs/icm-defaults/040-governance/ADR-0018-adr-metadata-and-numbering-standardization.md
+- ../../../../docs/icm-defaults/040-governance/ADR-Implementation-Plan.md
 
 ## Operating Model
 
