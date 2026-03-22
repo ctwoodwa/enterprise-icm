@@ -4,10 +4,10 @@ Define which standards to adopt for the project and how to apply them safely in 
 
 ## Inputs
 
-| Source | File/Location | Section/Scope | Why |
-|---|---|---|---|
-| Previous stage | ../02-gap-analysis/output/[slug]-standards-gap-analysis.md | Full file | Primary gap and priority input |
-| Canonical standards | ../../references/layer-3-defaults-index.md | Domain, architecture, governance, release channels | Confirms target-state decisions |
+| Source              | File/Location                                              | Section/Scope                                      | Why                             |
+| ------------------- | ---------------------------------------------------------- | -------------------------------------------------- | ------------------------------- |
+| Previous stage      | ../02-gap-analysis/output/[slug]-standards-gap-analysis.md | Full file                                          | Primary gap and priority input  |
+| Canonical standards | ../../references/layer-3-defaults-index.md                 | Domain, architecture, governance, release channels | Confirms target-state decisions |
 
 ## Process
 
@@ -20,22 +20,22 @@ Define which standards to adopt for the project and how to apply them safely in 
 
 ## Outputs
 
-| Artifact | Location | Format |
-|---|---|---|
+| Artifact                 | Location                        | Format   |
+| ------------------------ | ------------------------------- | -------- |
 | Upgrade design decisions | output/[slug]-upgrade-design.md | Markdown |
 
 ## Checkpoints
 
-| After Step | Agent Presents | Human Decides |
-|---|---|---|
-| 2 | Per-standard adoption decision matrix | Approve adoption scope and exceptions |
-| 4 | Proposed migration approaches and compatibility notes | Confirm rollout strategy direction |
+| After Step | Agent Presents                                        | Human Decides                         |
+| ---------- | ----------------------------------------------------- | ------------------------------------- |
+| 2          | Per-standard adoption decision matrix                 | Approve adoption scope and exceptions |
+| 4          | Proposed migration approaches and compatibility notes | Confirm rollout strategy direction    |
 
 ## Audit
 
-| Check | Pass Condition |
-|---|---|
-| Decision completeness | Every prioritized Stage 02 gap has an explicit Adopt/Scope/Approach decision |
-| Rationale quality | `Partial` and `No` decisions include documented rationale |
-| Compatibility planning | Legacy compatibility implications are explicit where relevant |
-| Output naming | Artifact matches `output/[slug]-upgrade-design.md` |
+| Check                  | Pass Condition                                                               |
+| ---------------------- | ---------------------------------------------------------------------------- |
+| Decision completeness  | Every prioritized Stage 02 gap has an explicit Adopt/Scope/Approach decision |
+| Rationale quality      | `Partial` and `No` decisions include documented rationale                    |
+| Compatibility planning | Legacy compatibility implications are explicit where relevant                |
+| Output naming          | Artifact matches `output/[slug]-upgrade-design.md`                           |

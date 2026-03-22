@@ -4,11 +4,11 @@ Understand how the target project works today and produce a structured current-s
 
 ## Inputs
 
-| Source | File/Location | Section/Scope | Why |
-|---|---|---|---|
-| Target project metadata | Manual input (repo path, branch, stack, owners) | Full metadata set | Defines scan scope and context |
-| Enterprise context | ../../references/layer-3-defaults-index.md | Context section | Anchors the definition of enterprise standard |
-| Architecture defaults | ../../references/layer-3-defaults-index.md | Architecture section | Guides what areas must be inspected |
+| Source                  | File/Location                                   | Section/Scope        | Why                                           |
+| ----------------------- | ----------------------------------------------- | -------------------- | --------------------------------------------- |
+| Target project metadata | Manual input (repo path, branch, stack, owners) | Full metadata set    | Defines scan scope and context                |
+| Enterprise context      | ../../references/layer-3-defaults-index.md      | Context section      | Anchors the definition of enterprise standard |
+| Architecture defaults   | ../../references/layer-3-defaults-index.md      | Architecture section | Guides what areas must be inspected           |
 
 ## Process
 
@@ -19,21 +19,21 @@ Understand how the target project works today and produce a structured current-s
 
 ## Outputs
 
-| Artifact | Location | Format |
-|---|---|---|
+| Artifact                     | Location                              | Format   |
+| ---------------------------- | ------------------------------------- | -------- |
 | Current architecture summary | output/[slug]-current-architecture.md | Markdown |
 
 ## Checkpoints
 
-| After Step | Agent Presents | Human Decides |
-|---|---|---|
-| 1 | Target repo metadata table | Confirm scope and slug |
-| 3 | Draft current-state summary by area | Approve completeness or request deeper scan |
+| After Step | Agent Presents                      | Human Decides                               |
+| ---------- | ----------------------------------- | ------------------------------------------- |
+| 1          | Target repo metadata table          | Confirm scope and slug                      |
+| 3          | Draft current-state summary by area | Approve completeness or request deeper scan |
 
 ## Audit
 
-| Check | Pass Condition |
-|---|---|
-| Coverage | Summary includes auth, data, integration, error handling, logging, deployment, testing |
-| Evidence quality | Findings reference concrete code/docs paths when available |
-| Output naming | Artifact matches `output/[slug]-current-architecture.md` |
+| Check            | Pass Condition                                                                         |
+| ---------------- | -------------------------------------------------------------------------------------- |
+| Coverage         | Summary includes auth, data, integration, error handling, logging, deployment, testing |
+| Evidence quality | Findings reference concrete code/docs paths when available                             |
+| Output naming    | Artifact matches `output/[slug]-current-architecture.md`                               |

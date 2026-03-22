@@ -1,5 +1,8 @@
 # Layer-3 Defaults Index (Read-Only)
 
+> **Canonical source:** `_core/references/layer-3-defaults-index.md`
+> Do not edit this copy directly. Update the canonical source and propagate.
+
 This workspace consumes canonical defaults from `docs/icm-defaults`.
 Do not copy or edit canonical defaults inside this workspace.
 

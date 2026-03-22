@@ -21,20 +21,20 @@ enterprise-standards-upgrade/
 
 ## Task Routing
 
-| Task Type | Go To |
-|---|---|
-| Capture current repo state | `stages/01-audit-current/CONTEXT.md` |
-| Compare with enterprise defaults | `stages/02-gap-analysis/CONTEXT.md` |
-| Decide adoption scope and strategy | `stages/03-evolution-design/CONTEXT.md` |
-| Build implementation rollout plan | `stages/04-migration-plan/CONTEXT.md` |
-| Track execution and readiness | `stages/05-rollout-checklist/CONTEXT.md` |
+| Task Type                          | Go To                                    |
+| ---------------------------------- | ---------------------------------------- |
+| Capture current repo state         | `stages/01-audit-current/CONTEXT.md`     |
+| Compare with enterprise defaults   | `stages/02-gap-analysis/CONTEXT.md`      |
+| Decide adoption scope and strategy | `stages/03-evolution-design/CONTEXT.md`  |
+| Build implementation rollout plan  | `stages/04-migration-plan/CONTEXT.md`    |
+| Track execution and readiness      | `stages/05-rollout-checklist/CONTEXT.md` |
 
 ## Triggers
 
-| Keyword | Action |
-|---|---|
-| `setup` | Confirm repo metadata and target slug, then start Stage 01 |
-| `status` | Scan `stages/*/output/` and summarize progress by stage |
+| Keyword  | Action                                                     |
+| -------- | ---------------------------------------------------------- |
+| `setup`  | Confirm repo metadata and target slug, then start Stage 01 |
+| `status` | Scan `stages/*/output/` and summarize progress by stage    |
 
 ## Global Constraints
 

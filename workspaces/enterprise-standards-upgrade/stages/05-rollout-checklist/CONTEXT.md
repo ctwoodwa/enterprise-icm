@@ -4,10 +4,10 @@ Track standards adoption progress and maintain evidence that the project is conv
 
 ## Inputs
 
-| Source | File/Location | Section/Scope | Why |
-|---|---|---|---|
-| Previous stage | ../04-migration-plan/output/[slug]-upgrade-plan.md | Full file | Planned tasks and phases to track |
-| Optional execution evidence | Project board, CI status, ADRs, PR links | Relevant snapshots | Validate status and outcomes |
+| Source                      | File/Location                                      | Section/Scope      | Why                               |
+| --------------------------- | -------------------------------------------------- | ------------------ | --------------------------------- |
+| Previous stage              | ../04-migration-plan/output/[slug]-upgrade-plan.md | Full file          | Planned tasks and phases to track |
+| Optional execution evidence | Project board, CI status, ADRs, PR links           | Relevant snapshots | Validate status and outcomes      |
 
 ## Process
 
@@ -19,22 +19,22 @@ Track standards adoption progress and maintain evidence that the project is conv
 
 ## Outputs
 
-| Artifact | Location | Format |
-|---|---|---|
+| Artifact                 | Location                        | Format   |
+| ------------------------ | ------------------------------- | -------- |
 | Upgrade execution status | output/[slug]-upgrade-status.md | Markdown |
 
 ## Checkpoints
 
-| After Step | Agent Presents | Human Decides |
-|---|---|---|
-| 2 | Initial checklist with status values | Confirm status rubric and ownership |
-| 4 | Blockers and risk summary | Confirm escalation actions |
+| After Step | Agent Presents                       | Human Decides                       |
+| ---------- | ------------------------------------ | ----------------------------------- |
+| 2          | Initial checklist with status values | Confirm status rubric and ownership |
+| 4          | Blockers and risk summary            | Confirm escalation actions          |
 
 ## Audit
 
-| Check | Pass Condition |
-|---|---|
-| Status completeness | All tracked standards areas have a current status |
-| Evidence traceability | Adopted and In progress items include evidence links where available |
-| Operational visibility | Blockers and risk items are explicit with suggested action |
-| Output naming | Artifact matches `output/[slug]-upgrade-status.md` |
+| Check                  | Pass Condition                                                       |
+| ---------------------- | -------------------------------------------------------------------- |
+| Status completeness    | All tracked standards areas have a current status                    |
+| Evidence traceability  | Adopted and In progress items include evidence links where available |
+| Operational visibility | Blockers and risk items are explicit with suggested action           |
+| Output naming          | Artifact matches `output/[slug]-upgrade-status.md`                   |
