@@ -14,9 +14,16 @@ enterprise-icm/
 │   ├── CONVENTIONS.md                 (source of truth for all patterns)
 │   ├── placeholder-syntax.md          (how {{VARIABLES}} work)
 │   └── templates/                     (blank starting points for new workspaces)
+├── docs/
+│   └── icm-defaults/                 (canonical Layer-3 enterprise standards library)
 └── workspaces/
     ├── enterprise-software-dev/       (greenfield enterprise .NET platform workspace)
-    └── enterprise-standards-upgrade/  (brownfield standards analysis and upgrade workspace)
+    ├── enterprise-feature-change/     (brownfield feature change workflow)
+    ├── enterprise-standards-upgrade/  (brownfield standards analysis and upgrade workspace)
+    ├── enterprise-api-change/         (brownfield API/event change under governance)
+    ├── enterprise-observability-enhancement/ (brownfield observability improvement)
+    ├── enterprise-test-coverage/      (brownfield test coverage improvement)
+    └── enterprise-quality-control/    (quality gates, checklists, and test coverage toolkit)
 ```
 
 ## Routing
@@ -24,7 +31,12 @@ enterprise-icm/
 | You want to...                              | Go to                                                        |
 |---------------------------------------------|--------------------------------------------------------------|
 | Design an enterprise software platform      | `workspaces/enterprise-software-dev/CLAUDE.md`               |
+| Add a feature to an existing project        | `workspaces/enterprise-feature-change/CONTEXT.md`            |
 | Upgrade an existing repo to enterprise standards | `workspaces/enterprise-standards-upgrade/CLAUDE.md`     |
+| Change APIs or events under governance      | `workspaces/enterprise-api-change/CLAUDE.md`                 |
+| Improve observability for a service         | `workspaces/enterprise-observability-enhancement/CLAUDE.md`  |
+| Increase test coverage for a service        | `workspaces/enterprise-test-coverage/CLAUDE.md`              |
+| Use quality gates, checklists, and TDD guides | `workspaces/enterprise-quality-control/CLAUDE.md`          |
 | Read the full MWP specification             | `_core/CONVENTIONS.md`                                       |
 | Understand the placeholder system           | `_core/placeholder-syntax.md`                                |
 | Use a template for a new workspace          | `_core/templates/`                                           |
