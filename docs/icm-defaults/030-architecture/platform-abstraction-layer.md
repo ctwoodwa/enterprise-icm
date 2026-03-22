@@ -60,7 +60,7 @@ The **Platform Abstraction Layer** wraps all external dependencies to protect {{
 #### Interface
 
 ```csharp
-namespace Cannae.Platform.Messaging;
+namespace {{ PRODUCT_NAME }}.Platform.Messaging;
 
 // Domain services depend on this interface
 public interface IEventPublisher
@@ -108,7 +108,7 @@ public record ConsumerOptions(
 #### Implementation (Azure Event Hub/Service Bus)
 
 ```csharp
-namespace Cannae.Platform.Messaging.Azure;
+namespace {{ PRODUCT_NAME }}.Platform.Messaging.Azure;
 
 // Platform team implements this
 internal class AzureEventHubPublisher : IEventPublisher
@@ -172,7 +172,7 @@ public class AssetService
 #### Interface
 
 ```csharp
-namespace Cannae.Platform.Identity;
+namespace {{ PRODUCT_NAME }}.Platform.Identity;
 
 public interface IIdentityProvider
 {
@@ -206,7 +206,7 @@ public record TokenValidationResult(
 #### Implementation (Entra ID)
 
 ```csharp
-namespace Cannae.Platform.Identity.EntraId;
+namespace {{ PRODUCT_NAME }}.Platform.Identity.EntraId;
 
 internal class EntraIdProvider : IIdentityProvider
 {
@@ -261,7 +261,7 @@ public class AssetApiController
 #### Interface
 
 ```csharp
-namespace Cannae.Platform.AI;
+namespace {{ PRODUCT_NAME }}.Platform.AI;
 
 public interface ILargeLanguageModel
 {
@@ -300,7 +300,7 @@ public record ToolCall(
 #### Implementation (OpenAI)
 
 ```csharp
-namespace Cannae.Platform.AI.OpenAI;
+namespace {{ PRODUCT_NAME }}.Platform.AI.OpenAI;
 
 internal class OpenAILanguageModel : ILargeLanguageModel
 {
@@ -364,7 +364,7 @@ public class MCPToolExecutor
 #### Interface
 
 ```csharp
-namespace Cannae.Platform.Storage;
+namespace {{ PRODUCT_NAME }}.Platform.Storage;
 
 public interface IRepository<TEntity> where TEntity : class
 {
@@ -392,7 +392,7 @@ public interface IUnitOfWork : IDisposable
 #### Implementation (SQL Server)
 
 ```csharp
-namespace Cannae.Platform.Storage.SqlServer;
+namespace {{ PRODUCT_NAME }}.Platform.Storage.SqlServer;
 
 internal class SqlRepository<TEntity> : IRepository<TEntity> where TEntity : class
 {
@@ -420,7 +420,7 @@ internal class CosmosRepository<TEntity> : IRepository<TEntity> where TEntity : 
 #### Interface
 
 ```csharp
-namespace Cannae.Platform.Caching;
+namespace {{ PRODUCT_NAME }}.Platform.Caching;
 
 public interface IDistributedCache
 {
@@ -443,7 +443,7 @@ public record CacheOptions(
 Platform abstractions are registered in a **platform startup module**:
 
 ```csharp
-namespace Cannae.Platform;
+namespace {{ PRODUCT_NAME }}.Platform;
 
 public static class PlatformServiceExtensions
 {
@@ -542,7 +542,7 @@ public async Task EventPublisher_RoundTrip()
 ## Migration Strategy
 
 ### Phase 1: Build Abstractions (Current)
-- Define interfaces in `Cannae.Platform` project
+- Define interfaces in `{{ PRODUCT_NAME }}.Platform` project
 - Implement Azure-based adapters
 - Create fake implementations for testing
 
@@ -587,7 +587,7 @@ public void Services_MustOnlyDependOn_PlatformAbstractions()
 {
     var services = Types.InAssembly(typeof(AssetService).Assembly);
     
-    services.Should().OnlyDependOn("Cannae.Platform.*");
+    services.Should().OnlyDependOn("{{ PRODUCT_NAME }}.Platform.*");
 }
 ```
 

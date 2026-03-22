@@ -43,21 +43,21 @@ Separate databases reduce contention and enable environment-specific optimizatio
 
 ```sql
 -- Database 1: Development & Testing (non-production)
-CREATE DATABASE CannaeDev
+CREATE DATABASE {{ PRODUCT_NAME }}Dev
   -- Contains: Alpha/Beta × Development/Testing
   -- Size: Small (test data only)
   -- Backup: Optional
   -- Recovery: Not critical
 
 -- Database 2: UAT (acceptance testing)
-CREATE DATABASE CannaeUAT
+CREATE DATABASE {{ PRODUCT_NAME }}UAT
   -- Contains: Beta/Stable × UAT
   -- Size: Medium (realistic test data)
   -- Backup: Daily
   -- Recovery: Standard RTO/RPO
 
 -- Database 3: Production & Support (high-value)
-CREATE DATABASE CannaeProd
+CREATE DATABASE {{ PRODUCT_NAME }}Prod
   -- Contains: Stable/LTS × Production/Support
   -- Size: Large (real customer data)
   -- Backup: Hourly + geo-redundancy
@@ -76,13 +76,13 @@ Stable/LTS data is long-lived; Alpha/Beta data is temporary:
 
 ```sql
 -- Database 1: Alpha & Beta (temporary)
-CREATE DATABASE CannaeAlphaBeta
+CREATE DATABASE {{ PRODUCT_NAME }}AlphaBeta
   -- Contains: Alpha/Beta × All environments
   -- Retention: Short-lived (months)
   -- Optimization: For rapid change
 
 -- Database 2: Stable & LTS (permanent)
-CREATE DATABASE CannaeStableLTS
+CREATE DATABASE {{ PRODUCT_NAME }}StableLTS
   -- Contains: Stable/LTS × All environments
   -- Retention: Permanent (years)
   -- Optimization: For archival and compliance
@@ -100,9 +100,9 @@ Combine both strategies for maximum flexibility:
 
 ```sql
 -- Environment + Release partitioning
--- Production Stable: CannaeProdStable (hot, permanent)
--- Production Support: CannaeProdSupport (point queries, permanent)
--- Production Development: CannaeProdDev (temporary, fast)
+-- Production Stable: {{ PRODUCT_NAME }}ProdStable (hot, permanent)
+-- Production Support: {{ PRODUCT_NAME }}ProdSupport (point queries, permanent)
+-- Production Development: {{ PRODUCT_NAME }}ProdDev (temporary, fast)
 -- etc.
 ```
 

@@ -88,23 +88,23 @@ During migration, write **translation layers** between old and new:
 ### 1.1 Build Platform Abstraction Layer
 
 **Deliverables:**
-- `Cannae.Platform.Messaging` package
+- `{{ PRODUCT_NAME }}.Platform.Messaging` package
   - `IEventPublisher`, `IEventConsumer`, `ICommandQueue` interfaces
   - Azure Event Hub/Service Bus implementations
   - In-memory fake implementations for testing
-- `Cannae.Platform.Identity` package
+- `{{ PRODUCT_NAME }}.Platform.Identity` package
   - `IIdentityProvider` interface
   - Entra ID implementation
   - Fake implementation for testing
-- `Cannae.Platform.AI` package
+- `{{ PRODUCT_NAME }}.Platform.AI` package
   - `ILargeLanguageModel` interface
   - OpenAI implementation
   - Mock implementation for testing
-- `Cannae.Platform.Storage` package
+- `{{ PRODUCT_NAME }}.Platform.Storage` package
   - `IRepository<T>`, `IUnitOfWork` interfaces
   - SQL Server implementation
   - In-memory implementation for testing
-- `Cannae.Platform.Caching` package
+- `{{ PRODUCT_NAME }}.Platform.Caching` package
   - `IDistributedCache` interface
   - Redis implementation
   - In-memory implementation for testing
@@ -122,7 +122,7 @@ During migration, write **translation layers** between old and new:
 ### 1.2 Define Domain Primitives
 
 **Deliverables:**
-- `Cannae.Domain.Primitives` package
+- `{{ PRODUCT_NAME }}.Domain.Primitives` package
   - `FacilityAsset`, `AssessmentEvent`, `WorkOrder`, `FacilityMetrics` records
   - `DomainEvent` base class
   - Validation rules
@@ -140,7 +140,7 @@ During migration, write **translation layers** between old and new:
 ### 1.3 Create Service Template
 
 **Deliverables:**
-- Service template project (`dotnet new cannae-service`)
+- Service template project (`dotnet new {{ PRODUCT_NAME }}-service`)
   - Aspire integration for local development
   - Platform abstraction references
   - OTEL instrumentation configured
