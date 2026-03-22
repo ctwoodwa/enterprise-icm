@@ -1,26 +1,32 @@
-# Enterprise Feature Change - Workspace Context
+# Enterprise Feature Change — Workspace Context
 
-Task routing for adding a feature to an existing .NET enterprise project.
+Task routing and rules for implementing a Jira ticket or user story end-to-end.
 
 ## Task Routing
 
 | Task Type | Go To Stage | Description |
 |---|---|---|
-| Understand current behavior and constraints | stages/01-discovery/ | Capture current state, assumptions, and impacted areas |
-| Decide architecture impact | stages/02-architecture-impact/ | Map feature to services, data, contracts, and channels |
-| Produce design and contract spec | stages/03-design-spec/ | Define APIs, events, versions, and contract tests |
-| Build implementation and rollout plan | stages/04-implementation-plan/ | Define owners, tasks, migration, rollout, and rollback |
-| Prepare review and PR support | stages/05-review-and-pr/ | Produce PR draft and required validation checklist |
+| Parse ticket, extract ACs, identify affected files | `stages/01-discovery/` | Everything downstream depends on this |
+| Read affected code, understand current patterns | `stages/02-architecture-impact/` | Required for M/L tickets; optional for XS/S |
+| Write the code changes | `stages/03-design-spec/` | The main implementation stage |
+| Write tests, verify acceptance criteria | `stages/04-implementation-plan/` | Required for M/L tickets; recommended for S |
+| Draft PR description, run final checklist | `stages/05-review-and-pr/` | Always required |
 
 ## Reference Materials
 
 | Resource | Location | Contains |
 |---|---|---|
-| Canonical Layer-3 defaults | references/layer-3-defaults-index.md | Read-only links to docs/icm-defaults guidance |
-| Stage outputs | stages/*/output/ | Discovery, impact, design, plan, and PR draft artifacts |
+| Ticket details and ACs | `_config/ticket-context.md` | Single source of truth for what is being built |
+| Branch naming conventions | `shared/branch-naming.md` | Consistent branch and commit naming |
+| PR description template | `shared/pr-template.md` | Structure for the PR description |
+| AC verification guide | `shared/acceptance-criteria-guide.md` | How to verify each AC systematically |
+| Stage outputs | `stages/*/output/` | Artifacts produced at each stage |
 
 ## Rules
 
-1. Treat all documents linked from references/layer-3-defaults-index.md as canonical and read-only.
-2. Run stages in order from 01 to 05 and carry outputs forward as listed in each stage input table.
-3. Use feature-[slug]-*.md output names where slug is a stable feature identifier from your tracking artifact.
+1. Fill `_config/ticket-context.md` fully during Stage 01 before reading any code.
+2. Run stages in the order defined by the ticket size routing table in `CLAUDE.md`.
+3. Read existing code before writing changes. Never write code based on assumed patterns.
+4. Every changed file must be traceable to an acceptance criterion.
+5. Use `feature-[slug]-*.md` naming for all stage output artifacts, where `slug` is the Jira ticket ID (e.g. `feature-COMET-42-discovery.md`).
+6. For `l`-size tickets: present the Stage 02 architecture impact report to the human and wait for explicit approval before proceeding to Stage 03.
