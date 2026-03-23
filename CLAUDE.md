@@ -28,7 +28,9 @@ enterprise-icm/
     ├── data-layer-migration/                  (in-memory to SQL Server migration)
     ├── ci-cd-pipeline/                        (pipeline design and scaffolding)
     ├── test-coverage-expansion/               (test scaffold generation)
-    └── docs-generator/                        (project documentation generation)
+    ├── docs-generator/                        (project documentation generation)
+    ├── asp-classic-to-blazor/                 (ASP Classic to Blazor migration)
+    └── jquery-to-blazor/                      (jQuery page to Blazor/Telerik migration)
 ```
 
 ## Routing
@@ -46,6 +48,8 @@ enterprise-icm/
 | Design or scaffold a CI/CD pipeline                   | `workspaces/ci-cd-pipeline/CLAUDE.md`                         |
 | Generate test scaffolds for existing code             | `workspaces/test-coverage-expansion/CLAUDE.md`                |
 | Generate project documentation                       | `workspaces/docs-generator/CLAUDE.md`                         |
+| Migrate ASP Classic pages to Blazor                   | `workspaces/asp-classic-to-blazor/CLAUDE.md`                  |
+| Upgrade jQuery pages to Blazor with Telerik           | `workspaces/jquery-to-blazor/CLAUDE.md`                       |
 | Read the full MWP specification                       | `_core/CONVENTIONS.md`                                        |
 | Understand the placeholder system                     | `_core/placeholder-syntax.md`                                 |
 | Use a template for a new workspace                    | `_core/templates/`                                            |
