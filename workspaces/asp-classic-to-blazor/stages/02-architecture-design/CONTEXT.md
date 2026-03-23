@@ -10,7 +10,7 @@ Define the target Blazor architecture, map ASP patterns to Blazor equivalents, a
 | Previous stage | `../01-inventory-assessment/output/{{PROJECT_SLUG}}-dependency-map.md` | Full file | Understand shared dependencies |
 | Pattern reference | `../../shared/asp-to-blazor-patterns.md` | Full file | Map each ASP pattern to its Blazor equivalent |
 | Telerik guide | `../../shared/telerik-component-map.md` | Full file | Select Telerik components for each UI pattern |
-| DAB reference | `../../shared/dab-reference.md` | "REST Endpoint Conventions" and "Entity Definition" sections | Classify endpoints as DAB-eligible vs custom API |
+| DAB reference | `../../shared/dab-reference.md` | "Entity Definition" and "REST Endpoint Conventions" sections | Classify endpoints as DAB-eligible vs custom API |
 
 ## Process
 

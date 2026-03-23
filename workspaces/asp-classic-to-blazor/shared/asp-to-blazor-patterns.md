@@ -56,6 +56,7 @@ For standard CRUD operations, use DAB endpoints via HttpClient. For complex logi
 | ADO insert (`conn.Execute "INSERT..."`) | DAB POST `/api/entity-name` via HttpClient | Send JSON body with field values |
 | ADO update (`conn.Execute "UPDATE..."`) | DAB PATCH `/api/entity-name/PK` via HttpClient | Send JSON body with changed fields |
 | ADO delete (`conn.Execute "DELETE..."`) | DAB DELETE `/api/entity-name/PK` via HttpClient | Returns 204 on success |
+| Complex query with joins/aggregation | Custom API endpoint + EF Core/Dapper | DAB does not handle multi-table logic |
 | `Server.CreateObject("ADODB.Connection")` | `DbContext` or `IDbConnection` via DI | For custom API endpoints only |
 | `ADODB.Recordset` | `List<T>` from EF Core or Dapper | Strongly typed models |
 | `conn.Execute(sql)` (complex logic) | `await dbContext.Database.ExecuteSqlRawAsync()` or Dapper `ExecuteAsync` | Always parameterize |

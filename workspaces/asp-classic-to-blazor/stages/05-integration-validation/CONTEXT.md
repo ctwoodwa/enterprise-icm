@@ -23,8 +23,8 @@ Verify functional parity between original ASP pages and new Blazor components, t
    - Login flow works with {{TARGET_AUTH_METHOD}}.
    - Protected pages redirect unauthenticated users.
    - Role-based access matches original behavior.
-5. Confirm data integrity: run key queries against the database and compare results with the original ASP application output.
-6. Validate DAB endpoints: confirm each DAB REST and GraphQL endpoint returns correct data, respects permissions, and handles filtering and pagination. Verify custom API endpoints for complex operations.
+5. Validate DAB endpoints: confirm each DAB REST and GraphQL endpoint returns correct data, respects permissions, and handles filtering and pagination. Verify custom API endpoints for complex operations.
+6. Confirm data integrity: run key queries against the database and compare results with the original ASP application output.
 7. Plan cutover strategy:
    - **Side-by-side**: Use YARP reverse proxy to route old URLs to new Blazor app gradually.
    - **Big-bang**: Switch DNS/IIS bindings in a single maintenance window.

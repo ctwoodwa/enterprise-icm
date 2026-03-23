@@ -33,7 +33,7 @@
 - Options: Yes (DAB for CRUD, custom API for complex logic), No (all endpoints via EF Core/Dapper)
 - Default: Yes
 - If "Yes": DAB auto-generates REST and GraphQL endpoints for standard CRUD. The custom API handles only complex business logic.
-- If "No": workspace falls back to pure EF Core/Dapper for all data access.
+- If "No": workspace falls back to pure EF Core/Dapper for all data access; DAB-related steps in Stage 03 are skipped.
 
 ### Q5: What data access approach should the custom API service use?
 - Placeholder: `{{DATA_ACCESS_APPROACH}}`
@@ -94,8 +94,8 @@ Your workspace is configured. Here is what was set up:
 
 - **Source project**: `{{ASP_SOURCE_PATH}}`
 - **Target**: {{BLAZOR_HOSTING_MODEL}} on {{DOTNET_VERSION}}
-- **Database**: {{DATABASE_TYPE}} with {{DATA_ACCESS_APPROACH}}
 - **DAB**: {{DAB_ENABLED}}
+- **Database**: {{DATABASE_TYPE}} with {{DATA_ACCESS_APPROACH}} (custom API)
 - **Auth**: {{CURRENT_AUTH_METHOD}} migrating to {{TARGET_AUTH_METHOD}}
 - **Telerik**: {{TELERIK_LICENSE_STATUS}}
 - **Deploy to**: {{DEPLOYMENT_TARGET}}

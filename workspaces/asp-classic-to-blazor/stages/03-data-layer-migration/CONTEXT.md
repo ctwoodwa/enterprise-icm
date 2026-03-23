@@ -1,12 +1,12 @@
 # Data Layer Migration
 
-Hybrid approach: Microsoft DAB auto-generates REST and GraphQL endpoints for standard CRUD operations. EF Core owns schema migrations and powers a custom API service for complex business logic. See `shared/dab-reference.md` for DAB config syntax.
+Replace ADO/ADODB and COM data access with a hybrid approach: DAB auto-generates REST and GraphQL endpoints for standard CRUD, while EF Core powers a custom API service for complex business logic.
 
 ## Inputs
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
-| Previous stage | `../02-architecture-design/output/{{PROJECT_SLUG}}-architecture.md` | "Endpoint Classification" and "Project Structure" sections | Know which endpoints are DAB-eligible vs custom API |
+| Architecture | `../02-architecture-design/output/{{PROJECT_SLUG}}-architecture.md` | "Endpoint Classification" and "Project Structure" sections | Know which endpoints are DAB-eligible vs custom API |
 | Inventory | `../01-inventory-assessment/output/{{PROJECT_SLUG}}-page-inventory.md` | Full file | Find all pages with database access |
 | Pattern reference | `../../shared/asp-to-blazor-patterns.md` | "Data Access" section | Map ADO patterns to DAB or EF Core equivalents |
 | DAB reference | `../../shared/dab-reference.md` | Full file | DAB config syntax, entity definitions, permissions |

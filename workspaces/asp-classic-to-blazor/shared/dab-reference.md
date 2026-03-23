@@ -2,6 +2,16 @@
 
 Quick reference for authoring `dab-config.json` in the ASP-to-Blazor migration context. DAB auto-generates REST and GraphQL endpoints for standard CRUD operations. For full docs see the [DAB documentation](https://learn.microsoft.com/en-us/azure/data-api-builder/overview).
 
+## When to Use DAB vs Custom API
+
+| Use DAB | Use Custom API |
+|---------|---------------|
+| Single-table CRUD (list, get, create, update, delete) | Multi-step business logic |
+| Filtered listing pages | Complex joins or aggregations |
+| Paginated data grids (TelerikGrid) | Solver pipelines or batch operations |
+| Simple stored procedure calls | COM object replacements with logic |
+| Read-only lookup tables | Custom auth or session logic beyond role-based permissions |
+
 ## Configuration File Structure
 
 ```json
@@ -152,9 +162,18 @@ builder.Services.AddHttpClient("DAB", client =>
 
 var client = HttpClientFactory.CreateClient("DAB");
 var products = await client.GetFromJsonAsync<List<Product>>("/api/products?$orderby=Name");
+
+// Create
+await client.PostAsJsonAsync("/api/products", newProduct);
+
+// Update
+await client.PatchAsJsonAsync($"/api/products/{id}", updatedFields);
+
+// Delete
+await client.DeleteAsync($"/api/products/{id}");
 ```
 
-For TelerikGrid with server-side operations, use the OnRead event to call DAB with filtering and pagination parameters built from the grid state.
+For TelerikGrid with server-side operations, use the OnRead event to call DAB with `$filter`, `$orderby`, and `$first`/`$after` parameters built from the grid state.
 
 ## Host Modes
 
@@ -178,13 +197,3 @@ dab add Product --source dbo.Products --permissions "anonymous:read"
 # Start DAB
 dab start
 ```
-
-## When to Use DAB vs Custom API
-
-| Use DAB | Use Custom API |
-|---------|---------------|
-| Single-table CRUD | Multi-step business logic |
-| List with filter/sort/page | Complex aggregations or reports |
-| Simple joins via relationships | Solver or computation pipelines |
-| Stored procedure wrappers | Operations requiring external service calls |
-| Read-only lookup tables | Custom auth or session logic beyond role-based permissions |

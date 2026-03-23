@@ -8,7 +8,7 @@ Systematic conversion of ASP Classic pages to .NET Core Blazor with Telerik Blaz
 |-----------|-------|-------------|
 | Catalog ASP pages | `stages/01-inventory-assessment/CONTEXT.md` | Scan source project, list pages, map dependencies, rate complexity |
 | Design architecture | `stages/02-architecture-design/CONTEXT.md` | Choose hosting model, map patterns, select Telerik components |
-| Migrate data layer | `stages/03-data-layer-migration/CONTEXT.md` | DAB for CRUD endpoints, EF Core for complex logic, replace COM objects |
+| Migrate data layer | `stages/03-data-layer-migration/CONTEXT.md` | DAB for CRUD endpoints, EF Core for complex logic, replace ADO/COM |
 | Convert pages | `stages/04-page-conversion/CONTEXT.md` | Transform ASP pages to Blazor components one at a time |
 | Validate and cut over | `stages/05-integration-validation/CONTEXT.md` | Verify parity, test auth, plan deployment cutover |
 
