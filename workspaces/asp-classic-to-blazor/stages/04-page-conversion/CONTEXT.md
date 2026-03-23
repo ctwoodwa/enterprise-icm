@@ -7,7 +7,8 @@ Convert ASP Classic pages to Blazor components one at a time, applying Telerik B
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
 | Architecture | `../02-architecture-design/output/{{PROJECT_SLUG}}-architecture.md` | Full file | Component hierarchy, Telerik selections, state management |
-| Data plan | `../03-data-layer-migration/output/{{PROJECT_SLUG}}-data-plan.md` | "Service Layer" section | Know which services to inject |
+| Data plan | `../03-data-layer-migration/output/{{PROJECT_SLUG}}-data-plan.md` | "Service Layer" and "DAB Entities" sections | Know which services to inject and which endpoints use DAB |
+| DAB config | `../03-data-layer-migration/output/{{PROJECT_SLUG}}-dab-config.json` | Full file | DAB entity paths for HttpClient calls |
 | Pattern reference | `../../shared/asp-to-blazor-patterns.md` | Full file | Look up each ASP pattern during conversion |
 | Telerik guide | `../../shared/telerik-component-map.md` | Full file | Apply correct Telerik components |
 | Language reference | `../../shared/vbscript-to-csharp.md` | Full file | Convert VBScript logic to C# |
@@ -23,9 +24,9 @@ Convert ASP Classic pages to Blazor components one at a time, applying Telerik B
    - Replace `<% %>` blocks with `@code { }`.
    - Replace `<%= %>` expressions with `@expression`.
    - Replace `#include` references with `<SharedComponent />` or `@inject` services.
-5. Apply Telerik components: replace HTML tables with TelerikGrid, form inputs with TelerikForm fields, dropdowns with TelerikDropDownList, etc.
+5. Apply Telerik components: replace HTML tables with TelerikGrid, form inputs with TelerikForm fields, dropdowns with TelerikDropDownList, etc. For data grids, use TelerikGrid OnRead to call DAB REST endpoints for server-side paging, sorting, and filtering.
 6. Convert VBScript business logic to C# methods using the language reference.
-7. Replace data access: inject the appropriate service from the data plan instead of inline ADO calls.
+7. Replace data access: for CRUD operations, call DAB endpoints via HttpClient. For complex logic, inject the appropriate service from the data plan. Do not call the custom API for operations DAB already handles.
 8. Replace Session/Application usage with the state management approach from the architecture.
 9. Replace Response.Redirect with NavigationManager.NavigateTo().
 10. Update the conversion checklist with the page status.
@@ -41,7 +42,7 @@ Convert ASP Classic pages to Blazor components one at a time, applying Telerik B
 | Check | Pass Condition |
 |-------|---------------|
 | No VBScript remains | Zero `<%` blocks or VBScript keywords in the output |
-| No inline SQL | All data access goes through injected services |
+| No inline SQL | All data access goes through DAB endpoints or injected services |
 | Telerik components used | Every data grid, form, and dropdown uses Telerik, not raw HTML |
 | Parameterized queries | No string-concatenated SQL anywhere in the component |
 | Navigation correct | All redirects use NavigationManager, not Response objects |

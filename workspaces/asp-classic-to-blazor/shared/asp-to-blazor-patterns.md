@@ -47,16 +47,23 @@ Quick-reference for converting ASP Classic constructs to their Blazor equivalent
 
 ## Data Access
 
+For standard CRUD operations, use DAB endpoints via HttpClient. For complex logic, use EF Core or Dapper through the custom API service. See `shared/dab-reference.md` for DAB config details.
+
 | ASP Classic | Blazor Equivalent | Notes |
 |-------------|-------------------|-------|
-| `Server.CreateObject("ADODB.Connection")` | `DbContext` or `IDbConnection` via DI | Register in Program.cs |
+| ADO recordset listing (`rs.Open "SELECT * FROM..."`) | DAB GET `/api/entity-name` via HttpClient | DAB handles filtering, sorting, pagination |
+| ADO single-record lookup | DAB GET `/api/entity-name/PK` via HttpClient | Returns single entity by primary key |
+| ADO insert (`conn.Execute "INSERT..."`) | DAB POST `/api/entity-name` via HttpClient | Send JSON body with field values |
+| ADO update (`conn.Execute "UPDATE..."`) | DAB PATCH `/api/entity-name/PK` via HttpClient | Send JSON body with changed fields |
+| ADO delete (`conn.Execute "DELETE..."`) | DAB DELETE `/api/entity-name/PK` via HttpClient | Returns 204 on success |
+| `Server.CreateObject("ADODB.Connection")` | `DbContext` or `IDbConnection` via DI | For custom API endpoints only |
 | `ADODB.Recordset` | `List<T>` from EF Core or Dapper | Strongly typed models |
-| `conn.Execute(sql)` | `await dbContext.Database.ExecuteSqlRawAsync()` or Dapper `ExecuteAsync` | Always parameterize |
-| `rs.Open sql, conn` | `await dbContext.Set<T>().ToListAsync()` | EF Core query |
+| `conn.Execute(sql)` (complex logic) | `await dbContext.Database.ExecuteSqlRawAsync()` or Dapper `ExecuteAsync` | Always parameterize |
+| `rs.Open sql, conn` (complex query) | `await dbContext.Set<T>().ToListAsync()` | EF Core query for custom API |
 | `rs("column")` | `entity.Column` property | Strongly typed access |
 | `rs.MoveNext` / `rs.EOF` | `foreach` loop over results | No manual cursor |
 | Inline SQL with string concat | Parameterized queries: `$"WHERE Id = @id"` | Prevents SQL injection |
-| `conn.ConnectionString = "..."` | `appsettings.json` + `builder.Configuration` | Never hardcode credentials |
+| `conn.ConnectionString = "..."` | `appsettings.json` + `builder.Configuration` | DAB uses `@env('VAR_NAME')` pattern |
 
 ## COM Objects
 

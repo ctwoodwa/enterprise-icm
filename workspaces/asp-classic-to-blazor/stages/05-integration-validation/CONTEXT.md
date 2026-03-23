@@ -9,6 +9,7 @@ Verify functional parity between original ASP pages and new Blazor components, t
 | Architecture | `../02-architecture-design/output/{{PROJECT_SLUG}}-architecture.md` | "Auth" and "State Management" sections | Know what to validate |
 | Conversion checklist | `../04-page-conversion/output/{{PROJECT_SLUG}}-conversion-checklist.md` | Full file | List of all converted pages and their status |
 | Page inventory | `../01-inventory-assessment/output/{{PROJECT_SLUG}}-page-inventory.md` | Full file | Original page list for parity comparison |
+| DAB config | `../03-data-layer-migration/output/{{PROJECT_SLUG}}-dab-config.json` | Full file | Validate DAB endpoints match expected entities |
 
 ## Process
 
@@ -23,12 +24,13 @@ Verify functional parity between original ASP pages and new Blazor components, t
    - Protected pages redirect unauthenticated users.
    - Role-based access matches original behavior.
 5. Confirm data integrity: run key queries against the database and compare results with the original ASP application output.
-6. Plan cutover strategy:
+6. Validate DAB endpoints: confirm each DAB REST and GraphQL endpoint returns correct data, respects permissions, and handles filtering and pagination. Verify custom API endpoints for complex operations.
+7. Plan cutover strategy:
    - **Side-by-side**: Use YARP reverse proxy to route old URLs to new Blazor app gradually.
    - **Big-bang**: Switch DNS/IIS bindings in a single maintenance window.
    - Recommend approach based on page count and risk tolerance.
-7. Document rollback steps in case the cutover needs to be reversed.
-8. Produce the validation report and cutover plan.
+8. Document rollback steps in case the cutover needs to be reversed.
+9. Produce the validation report and cutover plan.
 
 ## Audit
 
@@ -36,6 +38,7 @@ Verify functional parity between original ASP pages and new Blazor components, t
 |-------|---------------|
 | All pages converted | Conversion checklist shows no remaining "pending" pages |
 | Parity confirmed | Every page has a documented parity check result |
+| DAB endpoints verified | Every DAB entity returns correct data with proper permissions |
 | Auth tested | Login, logout, and protected-page redirect all work |
 | Cutover plan complete | Strategy chosen, steps documented, rollback plan included |
 
