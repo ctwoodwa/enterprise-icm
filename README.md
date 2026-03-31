@@ -22,21 +22,21 @@ The outputs feed directly into your actual .NET solution repos.
 
 ## Workspace Structure
 
-| Folder | Type | Purpose |
-| --- | --- | --- |
-| `_core/` | Shared | MWP conventions, templates, and canonical references (read-only) |
-| `docs/icm-defaults/` | Shared | Enterprise canonical defaults — Layer 3 |
-| `workspaces/enterprise-software-dev/` | Greenfield | Main workspace for .NET enterprise projects |
-| `workspaces/enterprise-standards-upgrade/` | Brownfield | Standards gap analysis and upgrade planning |
-| `workspaces/enterprise-feature-change/` | Brownfield | Ticket-to-PR feature implementation workflow |
-| `workspaces/enterprise-api-change/` | Brownfield | API and event contract change management |
-| `workspaces/enterprise-observability-enhancement/` | Brownfield | Telemetry and observability modernization |
-| `workspaces/enterprise-test-coverage/` | Brownfield | Test strategy and coverage planning |
-| `workspaces/enterprise-quality-control/` | Reference | Quality gates, checklists, metrics, and examples |
-| `workspaces/data-layer-migration/` | Brownfield | In-memory to SQL Server with DAB |
-| `workspaces/ci-cd-pipeline/` | Brownfield | Pipeline design and scaffolding |
-| `workspaces/test-coverage-expansion/` | Brownfield | Test scaffold generation |
-| `workspaces/docs-generator/` | Brownfield | Project documentation generation |
+| Folder                                               | Type       | Purpose                                                          |
+| ---------------------------------------------------- | ---------- | ---------------------------------------------------------------- |
+| `_core/`                                           | Shared     | MWP conventions, templates, and canonical references (read-only) |
+| `docs/icm-defaults/`                               | Shared     | Enterprise canonical defaults — Layer 3                         |
+| `workspaces/enterprise-software-dev/`              | Greenfield | Main workspace for .NET enterprise projects                      |
+| `workspaces/enterprise-standards-upgrade/`         | Brownfield | Standards gap analysis and upgrade planning                      |
+| `workspaces/enterprise-feature-change/`            | Brownfield | Ticket-to-PR feature implementation workflow                     |
+| `workspaces/enterprise-api-change/`                | Brownfield | API and event contract change management                         |
+| `workspaces/enterprise-observability-enhancement/` | Brownfield | Telemetry and observability modernization                        |
+| `workspaces/enterprise-test-coverage/`             | Brownfield | Test strategy and coverage planning                              |
+| `workspaces/enterprise-quality-control/`           | Reference  | Quality gates, checklists, metrics, and examples                 |
+| `workspaces/data-layer-migration/`                 | Brownfield | In-memory to SQL Server with DAB                                 |
+| `workspaces/ci-cd-pipeline/`                       | Brownfield | Pipeline design and scaffolding                                  |
+| `workspaces/test-coverage-expansion/`              | Brownfield | Test scaffold generation                                         |
+| `workspaces/docs-generator/`                       | Brownfield | Project documentation generation                                 |
 
 ## The Five Stages (Greenfield)
 
@@ -65,3 +65,5 @@ This keeps all project runs in git history without clearing outputs between runs
 - Work (JetBrains Rider + Copilot): same copilot-instructions.md, loaded automatically
 
 See workspaces/enterprise-software-dev/shared/copilot-integration.md for setup details.
+
+Forked from https://github.com/RinDig/Interpreted-Context-Methdology

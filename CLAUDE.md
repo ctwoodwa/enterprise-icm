@@ -30,7 +30,8 @@ enterprise-icm/
     ├── test-coverage-expansion/               (test scaffold generation)
     ├── docs-generator/                        (project documentation generation)
     ├── asp-classic-to-blazor/                 (ASP Classic to Blazor migration)
-    └── jquery-to-blazor/                      (jQuery page to Blazor/Telerik migration)
+    ├── jquery-to-blazor/                      (jQuery page to Blazor/Telerik migration)
+    └── gap-analysis-resolution/               (gap analysis to verified resolution)
 ```
 
 ## Routing
@@ -50,6 +51,7 @@ enterprise-icm/
 | Generate project documentation                       | `workspaces/docs-generator/CLAUDE.md`                         |
 | Migrate ASP Classic pages to Blazor                   | `workspaces/asp-classic-to-blazor/CLAUDE.md`                  |
 | Upgrade jQuery pages to Blazor with Telerik           | `workspaces/jquery-to-blazor/CLAUDE.md`                       |
+| Resolve gaps from a gap analysis                      | `workspaces/gap-analysis-resolution/CLAUDE.md`                |
 | Read the full MWP specification                       | `_core/CONVENTIONS.md`                                        |
 | Understand the placeholder system                     | `_core/placeholder-syntax.md`                                 |
 | Use a template for a new workspace                    | `_core/templates/`                                            |
