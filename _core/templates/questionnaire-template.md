@@ -23,26 +23,49 @@
         require interpretation and produce weaker constraints. -->
 
 ### Q1: [Question text]
+
 - Placeholder: `{{PLACEHOLDER_NAME}}`
 - Files: `path/to/file1.md`, `path/to/file2.md`
 - Type: free text
 - Default: [Default value if user wants to skip]
 
 ### Q2: [Question text]
+
 - Placeholder: `{{PLACEHOLDER_NAME}}`
 - Files: `path/to/file.md`
 - Type: selection
 - Options: Option A, Option B, Option C
 
 ### Q3: [Question about an optional feature -- yes/no]
+
 - Type: yes/no
 - If NO: Remove `stages/0N-name/` entirely
 - If YES: Keep it
+
+<!-- example: derived value
+### Q4: [Derived question -- agent fills this automatically]
+- Placeholder: `{{DERIVED_VALUE}}`
+- Files: `path/to/file.md`
+- Derived from: Q1
+- Logic: If Q1 includes "enterprise", set to "formal". Otherwise, set to "conversational".
+-->
+
+## Tools Required
+
+<!-- List external tools this workspace needs. Only include tools requiring
+     system-level installation (Node.js, Python, LibreOffice, etc.).
+     Bundled skills handle their own dependencies. See Pattern 7. -->
+
+| Tool        | Required By         | Setup Guide                                          |
+|-------------|---------------------|------------------------------------------------------|
+| [Tool name] | `stages/0N-name/`   | `references/tool-setup.md` or `shared/tool-setup.md` |
 
 ---
 
 ## After Onboarding
 
 [Tell the user what was configured and where to start.]
+
+After all replacements, run `status` to verify pipeline state.
 
 After all replacements, scan the entire workspace for remaining `{{` patterns. If any remain, ask for the missing info.

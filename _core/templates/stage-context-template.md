@@ -5,6 +5,8 @@
 ## Inputs
 
 <!-- List every file the agent needs. Be specific about which sections. -->
+<!-- Prefer Layer 3 reference docs for quality standards over Layer 4 outputs. See Pattern 14. -->
+<!-- Before adding a row: is this already defined elsewhere? Point there, don't duplicate. See Pattern 5. -->
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
@@ -38,7 +40,7 @@
      benefit from at least one.
 
      Format: after which process step, what the agent presents, what the human decides.
-     Delete this section if the stage runs straight through. -->
+     Delete this section for linear stages. See Pattern 11. -->
 
 | After Step | Agent Presents | Human Decides |
 |------------|---------------|---------------|
@@ -51,7 +53,7 @@
 
      Not every stage needs an audit. Data extraction or file conversion stages
      may not benefit. Creative and build stages almost always do.
-     Delete this section if no audit applies. -->
+     Delete this section for linear/extraction stages. See Pattern 12. -->
 
 | Check | Pass Condition |
 |-------|---------------|
@@ -65,4 +67,4 @@
 |----------|----------|--------|
 | [Name] | `output/[slug]-[type].md` | [Description of the format] |
 
-<!-- Target: keep this file under 80 lines. -->
+<!-- Target: 25-80 lines. Trim if longer. -->
