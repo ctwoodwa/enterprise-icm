@@ -7,6 +7,9 @@
 <!-- List every file the agent needs. Be specific about which sections. -->
 <!-- Prefer Layer 3 reference docs for quality standards over Layer 4 outputs. See Pattern 14. -->
 <!-- Before adding a row: is this already defined elsewhere? Point there, don't duplicate. See Pattern 5. -->
+<!-- Build note: Only list files this stage actually needs. Do not load other stages'
+     CONTEXT.md files or outputs unless they are a direct dependency of this stage.
+     Loading adjacent stages "for context" is the primary source of context overload. -->
 
 | Source | File/Location | Section/Scope | Why |
 |--------|--------------|---------------|-----|
@@ -15,6 +18,9 @@
 
 ## Process
 
+<!-- Build note: when referencing large files in steps, specify the section, not the
+     whole file (Pattern 4 -- Selective Section Loading). Example: instead of "read
+     shared/standards.md", write "read shared/standards.md §Naming Conventions". -->
 <!-- Numbered steps. Each step is one concrete action. Be specific enough that
      two different agents following these steps would produce structurally similar
      outputs.

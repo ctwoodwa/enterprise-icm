@@ -297,6 +297,30 @@ For non-code workspaces (content writing, course design), this pattern does not 
 
 ---
 
+## Pattern 16: Summary Snapshots
+
+Summary snapshots are small markdown files that give a fresh agent session fast orientation without loading the full pipeline. Think "executive summary," not "full report." They answer: where are we, what is done, what is next, and is anything blocked?
+
+**Where they live:** A `_status/` folder at the workspace root, parallel to `stages/` and not inside any stage.
+
+**What goes in them:** High-signal summary only. Common files:
+
+- `workspace-status.md` -- current pipeline state, what is complete, what is next, any blockers
+- `coverage-summary.md` -- for test or gap workspaces, counts and percentages at a glance
+- `delivery-summary.md` -- for delivery workspaces, what has shipped vs. what remains
+
+**When to create or update them:** After completing a stage or a significant batch of work. Always update the existing file. Do not append a new snapshot -- one file, one current state.
+
+**When to read them:** At the start of a new agent session, before loading any stage output. They replace the need to scan all `output/` folders for orientation.
+
+**Critical rule:** Snapshots are NEVER authoritative. They summarize. The real data lives in stage outputs and reference docs. If a snapshot contradicts an output file, the output file wins.
+
+**Size guardrail:** Each snapshot file must stay under 50 lines.
+
+The template at `_core/templates/summary-snapshot-template.md` shows a ready-to-copy structure.
+
+---
+
 ## Quality Guardrails
 
 - CONTEXT.md files: under 80 lines
@@ -305,3 +329,25 @@ For non-code workspaces (content writing, course design), this pattern does not 
 - No em dashes anywhere in the repo
 - Every folder that should persist but starts empty gets a `.gitkeep` file
 - Every markdown file should be readable by someone who understands markdown and git basics but does not have a deep engineering background
+
+---
+
+## Reconstructed Pipelines (Workspace Variant)
+
+A reconstructed pipeline is a workspace where implementation code already exists before ICM artifacts are created. The artifacts are built retroactively to document, validate, and extend the work -- not to drive it.
+
+**When to use:** Code predates the workspace. The team wants ICM structure for governance, audit, or extension without redoing work that is already done.
+
+**How to declare it:** Add a `Mode` section to the workspace CLAUDE.md (or a `_config/mode.md` file) with the single word `reconstructed` and a one-line explanation of why.
+
+**How stages behave differently:**
+
+| Stage range | Standard mode | Reconstructed mode |
+| ----------- | ------------- | ------------------ |
+| Stages 01-02 (discovery, architecture) | Created from requirements | Inferred from existing code |
+| Stages 03-05 (build, integrate) | Built fresh | Documented as-is; gaps noted |
+| Stage 06+ (validate) | Validates the build | Validates real code against standards |
+
+**Key rule:** Reconstructed artifacts must reflect actual code, not aspirational state. If the code does not meet a standard, the artifact says so. Gaps are recorded, not papered over.
+
+For full guidance on artifact types, plan tracking, and guardrails, see `_core/templates/reconstructed-pipeline-guide.md`.

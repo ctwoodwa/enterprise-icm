@@ -16,7 +16,7 @@ enterprise-icm/
 │   ├── references/
 │   │   └── layer-3-defaults-index.md  (canonical Layer-3 defaults index)
 │   └── templates/                     (blank starting points for new workspaces)
-├── docs/icm-defaults/                 (enterprise canonical defaults — Layer 3)
+├── docs/icm-defaults/                 (enterprise canonical defaults -- Layer 3)
 └── workspaces/
     ├── enterprise-software-dev/               (greenfield .NET platform design)
     ├── enterprise-standards-upgrade/          (brownfield standards gap analysis)
@@ -55,6 +55,10 @@ enterprise-icm/
 | Read the full MWP specification                       | `_core/CONVENTIONS.md`                                        |
 | Understand the placeholder system                     | `_core/placeholder-syntax.md`                                 |
 | Use a template for a new workspace                    | `_core/templates/`                                            |
+| Read template-building guidance                       | `_core/templates/template-guide.md`                           |
+| Set up a component-delivery workspace                 | `_core/templates/component-delivery-template.md`              |
+| Use reconstructed-pipeline mode                       | `_core/templates/reconstructed-pipeline-guide.md`             |
+| Add status snapshots to a workspace                   | `_core/templates/summary-snapshot-template.md`                |
 | View the canonical Layer-3 defaults index             | `_core/references/layer-3-defaults-index.md`                  |
 
 ## Triggers

@@ -1,4 +1,4 @@
-<!-- Target: under 80 lines. -->
+<!-- Target: under 80 lines. Extended guidance: _core/templates/template-guide.md -->
 # [Workspace Name]
 
 [One sentence: what this workspace covers.]
@@ -27,8 +27,15 @@
 ## Trigger Keywords
 
 <!-- Optional. Add workspace-specific triggers here. Root triggers (setup, status)
-     are inherited from the root CLAUDE.md. Only add triggers unique to this workspace. -->
+     are inherited from the root CLAUDE.md. Only add triggers unique to this workspace.
+     Add a custom trigger when a shortcut would let users skip directly into a
+     mid-pipeline stage or activate a mode -- e.g., bypassing intake when input
+     is already known. See template-guide.md §Custom Triggers for examples. -->
 
 | Keyword | Action |
 | ------- | ------ |
 | `{{TRIGGER_KEYWORD}}` | [What it does] |
+<!-- Custom trigger example (uncomment and adapt):
+| `ingest`  | Accept a source file and jump directly to Stage 01 analysis |
+| `resolve` | Open Stage 03 with a specific gap item pre-loaded as input  |
+-->
